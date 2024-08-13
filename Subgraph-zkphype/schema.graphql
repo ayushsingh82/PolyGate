@@ -1,0 +1,31 @@
+type Counter @entity(immutable: false){
+  id: String!
+  dispatchCounter: BigInt!
+}
+
+type ChainList @entity(immutable: false){
+  id: String!
+  dispatchCounter: BigInt!
+}
+
+type InterchainComputationRequested @entity(immutable: true) {
+  id: Bytes!
+  hash: Bytes! # bytes32
+  origin: BigInt! # uint256
+  dest: BigInt! # uint32
+  verifier: Bytes! # address
+  proof: Bytes! # bytes
+  publicInputs: [Bytes!]! # bytes32[]
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SentResult @entity(immutable: true) {
+  id: Bytes!
+  receiver: Bytes! # bytes32
+  data: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

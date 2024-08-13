@@ -1,0 +1,143 @@
+[
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_mailbox", "type": "address" },
+      {
+        "internalType": "address",
+        "name": "_interchainGasPaymaster",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "hash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "origin",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "dest",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "verifier",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "proof",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32[]",
+        "name": "publicInputs",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "InterchainComputationRequested",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "receiver",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "SentResult",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint32", "name": "_dest", "type": "uint32" },
+      { "internalType": "address", "name": "_router", "type": "address" }
+    ],
+    "name": "addRemote",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "destroy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint32", "name": "_origin", "type": "uint32" },
+      { "internalType": "bytes32", "name": "_sender", "type": "bytes32" },
+      { "internalType": "bytes", "name": "_body", "type": "bytes" }
+    ],
+    "name": "handle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint32", "name": "_dest", "type": "uint32" },
+      { "internalType": "address", "name": "_receipient", "type": "address" },
+      { "internalType": "bytes", "name": "_proof", "type": "bytes" },
+      {
+        "internalType": "bytes32[]",
+        "name": "_publicInputs",
+        "type": "bytes32[]"
+      }
+    ],
+    "name": "interchainProof",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "interchainSecurityModule",
+    "outputs": [
+      {
+        "internalType": "contract IInterchainSecurityModule",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_ism", "type": "address" }
+    ],
+    "name": "setInterchainSecurityModule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  { "stateMutability": "payable", "type": "receive" }
+]

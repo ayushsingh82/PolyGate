@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Router
+    network: mumbai
+    source:
+      address: "0xa0034B1872535Fbbda1F4d5E3319cB11F32E22af"
+      abi: Router
+      startBlock: 41229317
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - InterchainComputationRequested
+        - SentResult
+      abis:
+        - name: Router
+          file: Router/abis/Router.json
+      eventHandlers:
+        - event: InterchainComputationRequested(bytes32,uint256,uint32,address,bytes,bytes32[])
+          handler: handleInterchainComputationRequested
+        - event: SentResult(indexed bytes32,bytes)
+          handler: handleSentResult
+      file: Router/Router.wasm

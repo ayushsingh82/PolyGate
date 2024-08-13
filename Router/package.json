@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@hyperlane-xyz/sdk": "^1.5.3",
+    "@openzeppelin/contracts": "^5.0.0",
+    "ethers": "^5.7.2"
+  }
+}
