@@ -6,6 +6,9 @@ Here is where ZKP-Hype comes into the picture. In our approach, the dapp is depl
 # Architecture of the project
 We have executed our planned architecture with these 3 verticals:-
 
+![image](https://github.com/user-attachments/assets/e470ebb4-227b-439e-a8fc-067d9cbab96f)
+
+
 Polyhedra-based ZKP Router:- Proofs and public inputs are relayed from L1 to L2 and computation result is relayed back to L1 using Polyhedra. We have created custom routers for this particular use case by integrating Polyhedra's zkBridge.
 
 Noir Interchain Development Kit:- We have created an interchain dev kit for Noir developers using which they can compile, test, deploy the verifier, and run the off-chain agent with just a single command. Also, we have brought convenience to developers by providing debugging scripts using which they can verify the circuit on-chain.
